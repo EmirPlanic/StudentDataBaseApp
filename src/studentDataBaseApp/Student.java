@@ -9,7 +9,7 @@ public class Student {
  private int gradeYear;
  private String studentID;
  private String courses = null;
- private int tuitionBalance = 0;
+ private double tuitionBalance = 0;
  private static int costOfCourse = 600;
  private static int id = 1000;	
  
@@ -57,9 +57,20 @@ public class Student {
 	 
 	 }while (1!=0);
 	 System.out.println("ENROLLED IN: " + courses);
-	 System.out.println("TUITION BALANCE: " + tuitionBalance);
+	
  }
  
- 
+ public void viewBalance () {
+	 System.out.println("Your balance is: $" + tuitionBalance);
+ }
+ public void payTuition () {
+	 viewBalance();
+	 System.out.print("Enter your payment: $");
+	 Scanner input = new Scanner(System.in);
+	 double payment = input.nextDouble();
+	 tuitionBalance = tuitionBalance - payment;
+	 System.out.println("Thank you for your payment of " + payment);
+	 viewBalance();
+ }
 	
 }
