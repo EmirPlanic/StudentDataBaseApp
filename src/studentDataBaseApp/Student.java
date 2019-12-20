@@ -8,7 +8,7 @@ public class Student {
  private String lastName;
  private int gradeYear;
  private String studentID;
- private String courses = null;
+ private String courses;
  private double tuitionBalance = 0;
  private static int costOfCourse = 600;
  private static int id = 1000;	
@@ -27,7 +27,7 @@ public class Student {
 	 
 	 setStudentID();
 	 
-	 System.out.println(firstName + " " + lastName + " " + gradeYear + " " + studentID);
+	
 	 
 	
 	 
@@ -47,7 +47,7 @@ public class Student {
 	 Scanner input = new Scanner (System.in);
 	 String course = input.nextLine();
 	 if (!course.equals("Q") && !course.equals("q")) {
-		 courses = courses + "\n" + course;
+		 courses = courses +"\n" + course;
 		 tuitionBalance = tuitionBalance + costOfCourse;
 	 }
 	 
@@ -56,7 +56,7 @@ public class Student {
 	 }
 	 
 	 }while (1!=0);
-	 System.out.println("ENROLLED IN: " + courses);
+	
 	
  }
  
@@ -72,5 +72,13 @@ public class Student {
 	 System.out.println("Thank you for your payment of " + payment);
 	 viewBalance();
  }
-	
+ 
+ 
+	public String toString() {
+		return "Name: " + firstName + " " + lastName +
+				"\nGradel Level:" + gradeYear +
+				"\nStudent ID: " + studentID +
+				"\nCourses Enrolled: " + courses + 
+				"\nBalance: $" + tuitionBalance;
+	}
 }
