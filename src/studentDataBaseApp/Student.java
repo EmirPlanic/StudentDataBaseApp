@@ -8,7 +8,7 @@ public class Student {
  private String lastName;
  private int gradeYear;
  private String studentID;
- private String courses;
+ private String courses = null;
  private double tuitionBalance = 0;
  private static int costOfCourse = 600;
  private static int id = 1000;	
@@ -47,7 +47,7 @@ public class Student {
 	 Scanner input = new Scanner (System.in);
 	 String course = input.nextLine();
 	 if (!course.equals("Q") && !course.equals("q")) {
-		 courses = courses +"\n" + course;
+		 courses = courses +"\n " + course;
 		 tuitionBalance = tuitionBalance + costOfCourse;
 	 }
 	 
